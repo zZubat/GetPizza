@@ -1,14 +1,21 @@
-import React from 'react';
-import {Viem, Text, View, StyleSheet} from 'react-native';
-import Greeting from './components/Greeting'
+import React, {useState} from 'react';
+import {Viem, Text, View, StyleSheet, TouchableOpacity, } from 'react-native';
+
 
 const App = () => {
+
+  const [numero, setNumero] = useState(10)
+
+  function  alteravalor(){
+    setNumero(numero + 10)
+  }
+
   return(
     <View style={estilo.conteudo}>
-      <Greeting name="Miranda"/>
-      <Greeting name="Barreto"/>
-      <Greeting name="Michel"/>
-      <Greeting name="Alyson"/>
+      <TouchableOpacity onPress={alteravalor}>
+        <Text>Toque aqui</Text>
+      </TouchableOpacity>
+  <Text>{numero}</Text>
     </View>
   )
 }
